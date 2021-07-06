@@ -3,6 +3,7 @@ from django.utils import timezone
 # paginator = 게시판과 같은 목록이 주어져있을 때, 페이지 당 몇 개의 글을 보여줄지 지정해줄 수 있도록 도와주는 모듈
 from django.core.paginator import Paginator
 from .models import Blog
+from .forms import BlogPost
 # Create your views here.
 
 def home(request):
@@ -32,3 +33,15 @@ def create(request):
     blog.pub_date = timezone.datetime.now()
     blog.save()
     return redirect('/blog/' + str(blog.id))
+
+def blogpost(request) :
+    if request.method == 'POST' :
+        form = BlogPost(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.pub_date = timezone.now()
+            post.save()
+            return redirect('home')
+    else :
+        form = BlogPost()
+        return render(request, 'blog/new.html', {'form' : form})
