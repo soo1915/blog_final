@@ -1,12 +1,22 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.utils import timezone
-
+# paginator = 게시판과 같은 목록이 주어져있을 때, 페이지 당 몇 개의 글을 보여줄지 지정해줄 수 있도록 도와주는 모듈
+from django.core.paginator import Paginator
 from .models import Blog
 # Create your views here.
 
 def home(request):
     blogs = Blog.objects
-    return render(request, 'blog/home.html', {'blogs':blogs})
+    # 블로그 모든 글들을 대상으로
+    blog_list = Blog.objects.all()
+    # 블로그 객체 세 개를 한 페이지로 자르기
+    paginator = Paginator(blog_list, 3)
+    # request된 페이지가 뭔지를 알아냄 (request 페이지를 변수에 담아냄)
+    page = request.GET.get('page')
+    # request된 페이지를 얻어온 뒤 return 해줌
+    posts = paginator.get_page(page)
+
+    return render(request, 'blog/home.html', {'blogs':blogs, 'posts' : posts})
     
 def detail(request, blog_id):
     blog_detail = get_object_or_404(Blog, pk = blog_id)

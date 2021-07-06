@@ -1,15 +1,33 @@
 {% extends 'base.html' %}
 {% block content %}
 
- {% for blog in blogs.all %}
+ {% for blog in posts %}
  <br>
-    <div class="container">
-      <a href = "{% url 'detail' blog.id %}">
-        <h6>{{ blog.title }}</h6>
-      </a>
-      <p>{{ blog.pub_date}}</p>
-      <p>{{ blog.summary }}<a href="{%url 'detail' blog.id %}">...more</a></p>
+    <div class="card">
+      <div class ="card-body">
+        <a href = "{% url 'detail' blog.id %}">
+          <h5 class = "card-title">{{ blog.title }}</h5>
+        </a>
+      <h6 class = "card-subtitle mb-2 text-muted">{{ blog.pub_date}}</h6>
+      <p class = "card-text">{{ blog.summary }}
+      <a href="{%url 'detail' blog.id %}" class = "card-link">...more</a></p>
     </div>
+  </div>
   {% endfor %}  
+  
+  {% if posts.has_previous %}
+ <!-- 현재 보여지고 있는 페이지가 바로 post이고, 이 posts에게 이전 페이지가 존재하는지 체크하는 부분 -->
+  <a href = "?page=1">First</a>
+  <a href = "?page={{posts.previous_page_number}}">Previous</a>
+  {% endif %}
+
+  <span>{{posts.number}}</span>
+  <span>of</span>
+  <span>{{posts.paginator.num_pages}}</span>
+
+  {% if posts.has_next %}
+  <a href="?page={{posts.next_page_number}}">Next</a>
+  <a href="?page={{posts.paginator.num_pages}}">Last</a>
+  {% endif %} 
 
 {% endblock %}
