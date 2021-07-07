@@ -56,4 +56,6 @@ csrf : 사이트 간 요청 위조. 웹사이트 취약점 공격의 하나로, 
 - `{% else %}`, `{% endif %}`, `{% for --- %}`, `{% endfor %}` : if, for문이라고 생각하면 될듯
 
 
-- Paginator : 페이지 
+- Paginator : 페이지 관리
+
+
