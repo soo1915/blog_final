@@ -16,6 +16,10 @@ def home(request):
     page = request.GET.get('page')
     # request된 페이지를 얻어온 뒤 return 해줌
     posts = paginator.get_page(page)
+    
+    context = {
+        'post' : posts
+    }
 
     return render(request, 'blog/home.html', {'blogs':blogs, 'posts' : posts})
     
