@@ -6,7 +6,7 @@
 4. 회원가입 및 로그인 페이지 생성
 5. pagination 활용하여 페이지 이동 생성
 6. Form 이용하여 형식 고정
-   #### pagination 관련 bootstrap 사용 애매해서 아직 못했음 . . 니증에 현욱님한테 배우기
+   #### pagination 관련 bootstrap 사용 애매해서 아직 못했음 . . 증에 현욱님한테 배우기
 
 
 ### 참고 
