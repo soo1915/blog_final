@@ -23,7 +23,7 @@ USE_TZ = False
 
 - `form` 태그의 속성
 1. `action` : 데이터를 보낼 url을 지정
-2. `method ` : 데이터의 전송방식을 지정, GET방식과 POST 방식으로 나뉨
+2. `method` : 데이터의 전송방식을 지정, GET방식과 POST 방식으로 나뉨
    
 - `get` 방식과 `post` 방식의 차이점
 ```
