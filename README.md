@@ -7,7 +7,7 @@
 5. pagination 활용하여 페이지 이동 생성
 6. Form 이용하여 형식 고정
    #### pagination 관련 bootstrap 사용 애매해서 아직 못했음 . . 
-   #### github merge 못했음 . . master to main 
+   #### github merge 못했음 . . master to main 하기
 
 ***
 ### 참고 
