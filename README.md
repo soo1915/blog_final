@@ -8,6 +8,7 @@
 6. Form 이용하여 형식 고정
    #### pagination 관련 bootstrap 사용 애매해서 아직 못했음 . . 
    #### github merge 못했음 . . master to main 하기
+   #### SECRET_KEY 알림 메일 왔음
 
 ***
 ### 참고 
