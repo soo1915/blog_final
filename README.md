@@ -66,3 +66,18 @@ csrf : 사이트 간 요청 위조. 웹사이트 취약점 공격의 하나로, 
 - os 모듈 : 운영체제 API에 대한 인터페이스를 제공
 -`os.path.join` : 운영체제에 독립적으로 경로를 연결해줌
 - sqlite : 파이썬 안에 내장된 SQL 데이터베이스 
+
+1. pagination 관련 bootstrap 연결 방법
+    1. posts.paginator.num_pages 
+    2. html 에서 반복문 사용하기
+    3. num_page보다 작으면 계속 li 페이지 만들어주기
+2. media 부분에서 사진을 넣으면 화면 출력 안됨
+    1. view, edit 버튼 클릭하기
+    2. aws
+3. github merge 관련 - master to main
+    1. main이 예전 master
+4. faker 사용법 & seed 이해
+    1. faker - 가짜 데이터
+    2. 몇개를 쓸 건지 → seed → db안에 넣을 때 사용하는 명령어
+    3. faker를 이용해서 db 안에 랜덤값을 넣을 수 있음
+    4.
